@@ -1,0 +1,313 @@
+// Copyright 2020 Exowei Authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+// This package defines the Ethereum API that can be used to
+// interact with the Ethereum blockchain.
+package exowei.ethereum.v1alpha1;
+
+option go_package = "exowei.io/api/ethereum/v1alpha1";
+option cc_generic_services = true;
+
+import "gogoproto/gogo.proto";
+import "google/protobuf/timestamp.proto";
+
+option (gogoproto.goproto_getters_all) = false;
+option (gogoproto.equal_all) = false;
+option (gogoproto.gostring_all) = false;
+option cc_enable_arenas = true;
+
+service Ethereum {
+    rpc ProtocolVersion(ProtocolVersionRequest) returns (ProtocolVersionResponse) {}
+    rpc Syncing(SyncingRequest) returns (SyncingResponse) {}
+    rpc GasPrice(GasPriceRequest) returns (GasPriceResponse) {}
+    rpc BlockNumber(BlockNumberRequest) returns (BlockNumberResponse) {}
+    rpc GetBalance(GetBalanceRequest) returns (GetBalanceResponse) {}
+    rpc GetStorageAt(GetStorageAtRequest) returns (GetStorageAtResponse) {}
+    rpc GetTransactionCount(GetTransactionCountRequest) returns (GetTransactionCountResponse) {}
+    rpc GetBlockTransactionCountByHash(GetBlockTransactionCountByHashRequest) returns (GetBlockTransactionCountByHashResponse) {}
+    rpc GetBlockTransactionCountByNumber(GetBlockTransactionCountByNumberRequest) returns (GetBlockTransactionCountByNumberResponse) {}
+    rpc GetUncleCountByBlockHash(GetUncleCountByBlockHashRequest) returns (GetUncleCountByBlockHashResponse) {}
+    rpc GetUncleCountByBlockNumber(GetUncleCountByBlockNumberRequest) returns (GetUncleCountByBlockNumberResponse) {}
+    rpc GetCode(GetCodeRequest) returns (GetCodeResponse) {}
+    rpc SendRawTransaction(SendRawTransactionRequest) returns (SendRawTransactionResponse) {}
+    rpc Call(CallRequest) returns (CallResponse) {}
+    rpc EstimateGas(EstimateGasRequest) returns (EstimateGasResponse) {}
+    rpc GetBlockByHash(GetBlockByHashRequest) returns (Block) {}
+    rpc GetBlockByNumber(GetBlockByNumberRequest) returns (Block) {}
+    rpc ListTransactions(ListTransactionsRequest) returns (ListTransactionsResponse) {}
+    rpc GetTransactionByHash(GetTransactionByHashRequest) returns (Transaction) {}
+    rpc GetTransactionByBlockHashAndIndex(GetTransactionByBlockHashAndIndexRequest) returns (Transaction) {}
+    rpc GetTransactionByBlockNumberAndIndex(GetTransactionByBlockNumberAndIndexRequest) returns(Transaction) {}
+    rpc SubscribeTransactions(SubscribeTransactionsRequest) returns (stream Transaction) {}
+    rpc GetTransactionReceipt(GetTransactionReceiptRequest) returns (TransactionReceipt) {}
+    rpc PendingTransactions(PendingTransactionsRequest) returns (PendingTransactionsResponse) {}
+    rpc GetUncleByBlockHashAndIndex(GetUncleByBlockHashAndIndexRequest) returns (Block) {}
+    rpc GetUncleByBlockNumberAndIndex(GetUncleByBlockNumberAndIndexRequest) returns (Block) {}
+}
+
+message Ether {
+    uint64 wei = 1;
+    uint64 eth = 2;
+}
+
+message Transaction {
+    string hash = 1;
+    string from = 2;
+    string to = 3;
+    bytes input = 4;
+    uint64 nonce = 5;
+    uint32 gas = 6;
+    Ether gas_price = 7;
+    Ether value = 8;
+    string block_hash = 9;
+    uint32 block_number = 10;
+    uint32 transaction_index = 11;
+    bytes v = 12;
+    bytes r = 13;
+    bytes s = 14;
+}
+
+message Log {
+    uint64 log_index = 1;
+    uint32 block_number = 2;
+    string block_hash = 3;
+    string transaction_hash = 4;
+    uint32 transaction_index = 5;
+    string address = 6;
+    bytes data = 7;
+    repeated string topics = 8;
+}
+
+enum TransactionStatus {
+    FAILURE = 0;
+    SUCCESS = 1;
+}
+
+message TransactionReceipt {
+    string transaction_hash = 1;
+    uint32 transaction_index = 2;
+    string block_hash = 3;
+    uint32 block_number = 4;
+    string from = 5;
+    string to = 6;
+    uint32 cumulative_gas_used = 7;
+    uint32 gas_used = 8;
+    string contract_address = 9;
+    repeated Log logs = 10;
+    string logs_bloom = 11;
+    string root = 12;
+    TransactionStatus status = 13;
+}
+
+message Block {
+    uint32 number = 1;
+    string hash = 2;
+    string parent_hash = 3;
+    string nonce = 4;
+    string sha3_uncles = 5;
+    string logs_bloom = 6;
+    string transactions_root = 7;
+    string state_root = 8;
+    string receipts_root = 9;
+    string miner = 10;
+    string difficulty = 11;
+    string total_difficulty = 12;
+    bytes extra_data = 13;
+    uint32 block_size = 14;
+    uint32 gas_limit = 15;
+    uint32 gas_used = 16;
+    google.protobuf.Timestamp timestamp = 17;
+    repeated Transaction transactions = 18; 
+    repeated string transaction_hashes = 19;
+    repeated string uncles = 20;
+}
+
+message ProtocolVersionRequest {}
+
+message ProtocolVersionResponse {
+    uint32 protocol_version = 1;
+}
+
+message SyncingRequest {}
+
+message SyncingResponse {
+    bool syncing = 1;
+    uint32 starting_block = 2;
+    uint32 current_block = 3;
+    uint32 highest_block = 4;
+}
+
+message GasPriceRequest {}
+
+message GasPriceResponse {
+    Ether gas_price = 1;
+}
+
+message BlockNumberRequest {}
+
+message BlockNumberResponse {
+    uint32 block_number = 1;
+}
+
+message GetBalanceRequest {
+    string address = 1;
+    uint32 block_number = 2;
+}
+
+message GetBalanceResponse {
+    Ether balance = 1;
+}
+
+message GetStorageAtRequest {
+    string address = 1;
+    uint64 offset = 2;
+    uint32 block_number = 3;
+}
+
+message GetStorageAtResponse {
+    bytes data = 1;
+}
+
+message GetTransactionCountRequest {
+    string address = 1;
+    uint32 block_number = 2;
+}
+
+message GetTransactionCountResponse {
+    uint32 transaction_count = 1;
+}
+
+message GetBlockTransactionCountByHashRequest {
+    string block_hash = 1;
+}
+
+message GetBlockTransactionCountByHashResponse {
+    uint32 transaction_count = 1;
+}
+
+message GetBlockTransactionCountByNumberRequest {
+    uint32 block_number = 1;
+}
+
+message GetBlockTransactionCountByNumberResponse {
+    uint32 transaction_count = 1;
+}
+
+message GetUncleCountByBlockHashRequest {
+    string block_hash = 1;
+}
+
+message GetUncleCountByBlockHashResponse {
+    uint32 uncle_count = 1;
+}
+
+message GetUncleCountByBlockNumberRequest {
+    uint32 block_number = 1;
+}
+
+message GetUncleCountByBlockNumberResponse {
+    uint32 uncle_count = 1;
+}
+
+message GetCodeRequest {
+    string address = 1;
+}
+
+message GetCodeResponse {
+    bytes data = 1;
+}
+
+message SendRawTransactionRequest {
+    bytes data = 1;
+}
+
+message SendRawTransactionResponse {
+    string transaction_hash = 1;
+}
+
+message CallRequest {
+    Transaction transaction = 1;
+}
+
+message CallResponse {
+    bytes data = 1;
+}
+
+message EstimateGasRequest {
+    Transaction transaction = 1;
+}
+
+message EstimateGasResponse {
+    uint32 estimated_gas = 1;
+}
+
+message GetBlockByHashRequest {
+    string block_hash = 1;
+    bool include_full_transactions = 2;
+}
+
+message GetBlockByNumberRequest {
+    uint32 block_number = 1;
+    bool include_full_transactions = 3;
+}
+
+message ListTransactionsRequest {
+    string account = 1;
+    uint32 page_size = 2;
+    string page_token = 3;
+}
+
+message ListTransactionsResponse {
+    repeated Transaction transactions = 1;
+}
+
+message GetTransactionByHashRequest {
+    string transaction_hash = 1;
+}
+
+message GetTransactionByBlockHashAndIndexRequest {
+    string block_hash = 1;
+    uint32 transaction_index = 2;
+}
+
+message GetTransactionByBlockNumberAndIndexRequest {
+    uint32 block_number = 1;
+    uint32 transaction_index = 2;
+}
+
+message SubscribeTransactionsRequest {
+    string account = 1;
+}
+
+message GetTransactionReceiptRequest {
+    string transaction_hash = 1;
+}
+
+message PendingTransactionsRequest {}
+
+message PendingTransactionsResponse {
+    repeated Transaction transactions = 1;
+}
+
+message GetUncleByBlockHashAndIndexRequest {
+    string block_hash = 1;
+    uint32 uncle_index = 2;
+}
+
+message GetUncleByBlockNumberAndIndexRequest {
+    uint32 block_number = 1;
+    uint32 uncle_index = 2;
+}

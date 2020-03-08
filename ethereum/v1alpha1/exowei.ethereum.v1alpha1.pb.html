@@ -1,0 +1,1739 @@
+---
+title: exowei.ethereum.v1alpha1
+layout: protoc-gen-docs
+generator: protoc-gen-docs
+number_of_entries: 50
+---
+<p>This package defines the Ethereum API that can be used to
+interact with the Ethereum blockchain.</p>
+
+<h2 id="Services">Services</h2>
+<h3 id="Ethereum">Ethereum</h3>
+<section>
+<pre id="Ethereum-ProtocolVersion"><code class="language-proto">rpc ProtocolVersion(ProtocolVersionRequest) returns (ProtocolVersionResponse)
+</code></pre>
+<pre id="Ethereum-Syncing"><code class="language-proto">rpc Syncing(SyncingRequest) returns (SyncingResponse)
+</code></pre>
+<pre id="Ethereum-GasPrice"><code class="language-proto">rpc GasPrice(GasPriceRequest) returns (GasPriceResponse)
+</code></pre>
+<pre id="Ethereum-BlockNumber"><code class="language-proto">rpc BlockNumber(BlockNumberRequest) returns (BlockNumberResponse)
+</code></pre>
+<pre id="Ethereum-GetBalance"><code class="language-proto">rpc GetBalance(GetBalanceRequest) returns (GetBalanceResponse)
+</code></pre>
+<pre id="Ethereum-GetStorageAt"><code class="language-proto">rpc GetStorageAt(GetStorageAtRequest) returns (GetStorageAtResponse)
+</code></pre>
+<pre id="Ethereum-GetTransactionCount"><code class="language-proto">rpc GetTransactionCount(GetTransactionCountRequest) returns (GetTransactionCountResponse)
+</code></pre>
+<pre id="Ethereum-GetBlockTransactionCountByHash"><code class="language-proto">rpc GetBlockTransactionCountByHash(GetBlockTransactionCountByHashRequest) returns (GetBlockTransactionCountByHashResponse)
+</code></pre>
+<pre id="Ethereum-GetBlockTransactionCountByNumber"><code class="language-proto">rpc GetBlockTransactionCountByNumber(GetBlockTransactionCountByNumberRequest) returns (GetBlockTransactionCountByNumberResponse)
+</code></pre>
+<pre id="Ethereum-GetUncleCountByBlockHash"><code class="language-proto">rpc GetUncleCountByBlockHash(GetUncleCountByBlockHashRequest) returns (GetUncleCountByBlockHashResponse)
+</code></pre>
+<pre id="Ethereum-GetUncleCountByBlockNumber"><code class="language-proto">rpc GetUncleCountByBlockNumber(GetUncleCountByBlockNumberRequest) returns (GetUncleCountByBlockNumberResponse)
+</code></pre>
+<pre id="Ethereum-GetCode"><code class="language-proto">rpc GetCode(GetCodeRequest) returns (GetCodeResponse)
+</code></pre>
+<pre id="Ethereum-SendRawTransaction"><code class="language-proto">rpc SendRawTransaction(SendRawTransactionRequest) returns (SendRawTransactionResponse)
+</code></pre>
+<pre id="Ethereum-Call"><code class="language-proto">rpc Call(CallRequest) returns (CallResponse)
+</code></pre>
+<pre id="Ethereum-EstimateGas"><code class="language-proto">rpc EstimateGas(EstimateGasRequest) returns (EstimateGasResponse)
+</code></pre>
+<pre id="Ethereum-GetBlockByHash"><code class="language-proto">rpc GetBlockByHash(GetBlockByHashRequest) returns (Block)
+</code></pre>
+<pre id="Ethereum-GetBlockByNumber"><code class="language-proto">rpc GetBlockByNumber(GetBlockByNumberRequest) returns (Block)
+</code></pre>
+<pre id="Ethereum-ListTransactions"><code class="language-proto">rpc ListTransactions(ListTransactionsRequest) returns (ListTransactionsResponse)
+</code></pre>
+<pre id="Ethereum-GetTransactionByHash"><code class="language-proto">rpc GetTransactionByHash(GetTransactionByHashRequest) returns (Transaction)
+</code></pre>
+<pre id="Ethereum-GetTransactionByBlockHashAndIndex"><code class="language-proto">rpc GetTransactionByBlockHashAndIndex(GetTransactionByBlockHashAndIndexRequest) returns (Transaction)
+</code></pre>
+<pre id="Ethereum-GetTransactionByBlockNumberAndIndex"><code class="language-proto">rpc GetTransactionByBlockNumberAndIndex(GetTransactionByBlockNumberAndIndexRequest) returns (Transaction)
+</code></pre>
+<pre id="Ethereum-SubscribeTransactions"><code class="language-proto">rpc SubscribeTransactions(SubscribeTransactionsRequest) returns (Transaction)
+</code></pre>
+<pre id="Ethereum-GetTransactionReceipt"><code class="language-proto">rpc GetTransactionReceipt(GetTransactionReceiptRequest) returns (TransactionReceipt)
+</code></pre>
+<pre id="Ethereum-PendingTransactions"><code class="language-proto">rpc PendingTransactions(PendingTransactionsRequest) returns (PendingTransactionsResponse)
+</code></pre>
+<pre id="Ethereum-GetUncleByBlockHashAndIndex"><code class="language-proto">rpc GetUncleByBlockHashAndIndex(GetUncleByBlockHashAndIndexRequest) returns (Block)
+</code></pre>
+<pre id="Ethereum-GetUncleByBlockNumberAndIndex"><code class="language-proto">rpc GetUncleByBlockNumberAndIndex(GetUncleByBlockNumberAndIndexRequest) returns (Block)
+</code></pre>
+</section>
+<h2 id="Types">Types</h2>
+<h3 id="Block">Block</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="Block-number">
+<td><code>number</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-hash">
+<td><code>hash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-parent_hash">
+<td><code>parentHash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-nonce">
+<td><code>nonce</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-sha3_uncles">
+<td><code>sha3Uncles</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-logs_bloom">
+<td><code>logsBloom</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-transactions_root">
+<td><code>transactionsRoot</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-state_root">
+<td><code>stateRoot</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-receipts_root">
+<td><code>receiptsRoot</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-miner">
+<td><code>miner</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-difficulty">
+<td><code>difficulty</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-total_difficulty">
+<td><code>totalDifficulty</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-extra_data">
+<td><code>extraData</code></td>
+<td><code>bytes</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-block_size">
+<td><code>blockSize</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-gas_limit">
+<td><code>gasLimit</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-gas_used">
+<td><code>gasUsed</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-timestamp">
+<td><code>timestamp</code></td>
+<td><code><a href="https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#timestamp">Timestamp</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-transactions">
+<td><code>transactions</code></td>
+<td><code><a href="#Transaction">Transaction[]</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-transaction_hashes">
+<td><code>transactionHashes</code></td>
+<td><code>string[]</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-uncles">
+<td><code>uncles</code></td>
+<td><code>string[]</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="BlockNumberRequest">BlockNumberRequest</h3>
+<section>
+</section>
+<h3 id="BlockNumberResponse">BlockNumberResponse</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BlockNumberResponse-block_number">
+<td><code>blockNumber</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="CallRequest">CallRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CallRequest-transaction">
+<td><code>transaction</code></td>
+<td><code><a href="#Transaction">Transaction</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="CallResponse">CallResponse</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CallResponse-data">
+<td><code>data</code></td>
+<td><code>bytes</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="EstimateGasRequest">EstimateGasRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EstimateGasRequest-transaction">
+<td><code>transaction</code></td>
+<td><code><a href="#Transaction">Transaction</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="EstimateGasResponse">EstimateGasResponse</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EstimateGasResponse-estimated_gas">
+<td><code>estimatedGas</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="Ether">Ether</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="Ether-wei">
+<td><code>wei</code></td>
+<td><code>uint64</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Ether-eth">
+<td><code>eth</code></td>
+<td><code>uint64</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GasPriceRequest">GasPriceRequest</h3>
+<section>
+</section>
+<h3 id="GasPriceResponse">GasPriceResponse</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GasPriceResponse-gas_price">
+<td><code>gasPrice</code></td>
+<td><code><a href="#Ether">Ether</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetBalanceRequest">GetBalanceRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetBalanceRequest-address">
+<td><code>address</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="GetBalanceRequest-block_number">
+<td><code>blockNumber</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetBalanceResponse">GetBalanceResponse</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetBalanceResponse-balance">
+<td><code>balance</code></td>
+<td><code><a href="#Ether">Ether</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetBlockByHashRequest">GetBlockByHashRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetBlockByHashRequest-block_hash">
+<td><code>blockHash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="GetBlockByHashRequest-include_full_transactions">
+<td><code>includeFullTransactions</code></td>
+<td><code>bool</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetBlockByNumberRequest">GetBlockByNumberRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetBlockByNumberRequest-block_number">
+<td><code>blockNumber</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="GetBlockByNumberRequest-include_full_transactions">
+<td><code>includeFullTransactions</code></td>
+<td><code>bool</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetBlockTransactionCountByHashRequest">GetBlockTransactionCountByHashRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetBlockTransactionCountByHashRequest-block_hash">
+<td><code>blockHash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetBlockTransactionCountByHashResponse">GetBlockTransactionCountByHashResponse</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetBlockTransactionCountByHashResponse-transaction_count">
+<td><code>transactionCount</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetBlockTransactionCountByNumberRequest">GetBlockTransactionCountByNumberRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetBlockTransactionCountByNumberRequest-block_number">
+<td><code>blockNumber</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetBlockTransactionCountByNumberResponse">GetBlockTransactionCountByNumberResponse</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetBlockTransactionCountByNumberResponse-transaction_count">
+<td><code>transactionCount</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetCodeRequest">GetCodeRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetCodeRequest-address">
+<td><code>address</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetCodeResponse">GetCodeResponse</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetCodeResponse-data">
+<td><code>data</code></td>
+<td><code>bytes</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetStorageAtRequest">GetStorageAtRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetStorageAtRequest-address">
+<td><code>address</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="GetStorageAtRequest-offset">
+<td><code>offset</code></td>
+<td><code>uint64</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="GetStorageAtRequest-block_number">
+<td><code>blockNumber</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetStorageAtResponse">GetStorageAtResponse</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetStorageAtResponse-data">
+<td><code>data</code></td>
+<td><code>bytes</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetTransactionByBlockHashAndIndexRequest">GetTransactionByBlockHashAndIndexRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetTransactionByBlockHashAndIndexRequest-block_hash">
+<td><code>blockHash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="GetTransactionByBlockHashAndIndexRequest-transaction_index">
+<td><code>transactionIndex</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetTransactionByBlockNumberAndIndexRequest">GetTransactionByBlockNumberAndIndexRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetTransactionByBlockNumberAndIndexRequest-block_number">
+<td><code>blockNumber</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="GetTransactionByBlockNumberAndIndexRequest-transaction_index">
+<td><code>transactionIndex</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetTransactionByHashRequest">GetTransactionByHashRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetTransactionByHashRequest-transaction_hash">
+<td><code>transactionHash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetTransactionCountRequest">GetTransactionCountRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetTransactionCountRequest-address">
+<td><code>address</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="GetTransactionCountRequest-block_number">
+<td><code>blockNumber</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetTransactionCountResponse">GetTransactionCountResponse</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetTransactionCountResponse-transaction_count">
+<td><code>transactionCount</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetTransactionReceiptRequest">GetTransactionReceiptRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetTransactionReceiptRequest-transaction_hash">
+<td><code>transactionHash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetUncleByBlockHashAndIndexRequest">GetUncleByBlockHashAndIndexRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetUncleByBlockHashAndIndexRequest-block_hash">
+<td><code>blockHash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="GetUncleByBlockHashAndIndexRequest-uncle_index">
+<td><code>uncleIndex</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetUncleByBlockNumberAndIndexRequest">GetUncleByBlockNumberAndIndexRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetUncleByBlockNumberAndIndexRequest-block_number">
+<td><code>blockNumber</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="GetUncleByBlockNumberAndIndexRequest-uncle_index">
+<td><code>uncleIndex</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetUncleCountByBlockHashRequest">GetUncleCountByBlockHashRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetUncleCountByBlockHashRequest-block_hash">
+<td><code>blockHash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetUncleCountByBlockHashResponse">GetUncleCountByBlockHashResponse</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetUncleCountByBlockHashResponse-uncle_count">
+<td><code>uncleCount</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetUncleCountByBlockNumberRequest">GetUncleCountByBlockNumberRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetUncleCountByBlockNumberRequest-block_number">
+<td><code>blockNumber</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetUncleCountByBlockNumberResponse">GetUncleCountByBlockNumberResponse</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetUncleCountByBlockNumberResponse-uncle_count">
+<td><code>uncleCount</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="ListTransactionsRequest">ListTransactionsRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ListTransactionsRequest-account">
+<td><code>account</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="ListTransactionsRequest-page_size">
+<td><code>pageSize</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="ListTransactionsRequest-page_token">
+<td><code>pageToken</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="ListTransactionsResponse">ListTransactionsResponse</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ListTransactionsResponse-transactions">
+<td><code>transactions</code></td>
+<td><code><a href="#Transaction">Transaction[]</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="Log">Log</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="Log-log_index">
+<td><code>logIndex</code></td>
+<td><code>uint64</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Log-block_number">
+<td><code>blockNumber</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Log-block_hash">
+<td><code>blockHash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Log-transaction_hash">
+<td><code>transactionHash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Log-transaction_index">
+<td><code>transactionIndex</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Log-address">
+<td><code>address</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Log-data">
+<td><code>data</code></td>
+<td><code>bytes</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Log-topics">
+<td><code>topics</code></td>
+<td><code>string[]</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="PendingTransactionsRequest">PendingTransactionsRequest</h3>
+<section>
+</section>
+<h3 id="PendingTransactionsResponse">PendingTransactionsResponse</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="PendingTransactionsResponse-transactions">
+<td><code>transactions</code></td>
+<td><code><a href="#Transaction">Transaction[]</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="ProtocolVersionRequest">ProtocolVersionRequest</h3>
+<section>
+</section>
+<h3 id="ProtocolVersionResponse">ProtocolVersionResponse</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ProtocolVersionResponse-protocol_version">
+<td><code>protocolVersion</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="SendRawTransactionRequest">SendRawTransactionRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="SendRawTransactionRequest-data">
+<td><code>data</code></td>
+<td><code>bytes</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="SendRawTransactionResponse">SendRawTransactionResponse</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="SendRawTransactionResponse-transaction_hash">
+<td><code>transactionHash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="SubscribeTransactionsRequest">SubscribeTransactionsRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="SubscribeTransactionsRequest-account">
+<td><code>account</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="SyncingRequest">SyncingRequest</h3>
+<section>
+</section>
+<h3 id="SyncingResponse">SyncingResponse</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="SyncingResponse-syncing">
+<td><code>syncing</code></td>
+<td><code>bool</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="SyncingResponse-starting_block">
+<td><code>startingBlock</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="SyncingResponse-current_block">
+<td><code>currentBlock</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="SyncingResponse-highest_block">
+<td><code>highestBlock</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="Transaction">Transaction</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="Transaction-hash">
+<td><code>hash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Transaction-from">
+<td><code>from</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Transaction-to">
+<td><code>to</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Transaction-input">
+<td><code>input</code></td>
+<td><code>bytes</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Transaction-nonce">
+<td><code>nonce</code></td>
+<td><code>uint64</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Transaction-gas">
+<td><code>gas</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Transaction-gas_price">
+<td><code>gasPrice</code></td>
+<td><code><a href="#Ether">Ether</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Transaction-value">
+<td><code>value</code></td>
+<td><code><a href="#Ether">Ether</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Transaction-block_hash">
+<td><code>blockHash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Transaction-block_number">
+<td><code>blockNumber</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Transaction-transaction_index">
+<td><code>transactionIndex</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Transaction-v">
+<td><code>v</code></td>
+<td><code>bytes</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Transaction-r">
+<td><code>r</code></td>
+<td><code>bytes</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Transaction-s">
+<td><code>s</code></td>
+<td><code>bytes</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="TransactionReceipt">TransactionReceipt</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="TransactionReceipt-transaction_hash">
+<td><code>transactionHash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="TransactionReceipt-transaction_index">
+<td><code>transactionIndex</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="TransactionReceipt-block_hash">
+<td><code>blockHash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="TransactionReceipt-block_number">
+<td><code>blockNumber</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="TransactionReceipt-from">
+<td><code>from</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="TransactionReceipt-to">
+<td><code>to</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="TransactionReceipt-cumulative_gas_used">
+<td><code>cumulativeGasUsed</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="TransactionReceipt-gas_used">
+<td><code>gasUsed</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="TransactionReceipt-contract_address">
+<td><code>contractAddress</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="TransactionReceipt-logs">
+<td><code>logs</code></td>
+<td><code><a href="#Log">Log[]</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="TransactionReceipt-logs_bloom">
+<td><code>logsBloom</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="TransactionReceipt-root">
+<td><code>root</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="TransactionReceipt-status">
+<td><code>status</code></td>
+<td><code><a href="#TransactionStatus">TransactionStatus</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="TransactionStatus">TransactionStatus</h3>
+<section>
+<table class="enum-values">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="TransactionStatus-FAILURE">
+<td><code>FAILURE</code></td>
+<td>
+</td>
+</tr>
+<tr id="TransactionStatus-SUCCESS">
+<td><code>SUCCESS</code></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
