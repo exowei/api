@@ -1,0 +1,430 @@
+---
+title: exowei.bitcoin.v1alpha1
+layout: protoc-gen-docs
+generator: protoc-gen-docs
+number_of_entries: 12
+---
+<p>This package defines the Bitcoin API that can be used to
+interact with the Bitcoin blockchain.</p>
+
+<h2 id="Services">Services</h2>
+<h3 id="Bitcoin">Bitcoin</h3>
+<section>
+<pre id="Bitcoin-GetBlockByHash"><code class="language-proto">rpc GetBlockByHash(GetBlockByHashRequest) returns (Block)
+</code></pre>
+<pre id="Bitcoin-GetBlockByNumber"><code class="language-proto">rpc GetBlockByNumber(GetBlockByNumberRequest) returns (Block)
+</code></pre>
+<pre id="Bitcoin-ListTransactions"><code class="language-proto">rpc ListTransactions(ListTransactionsRequest) returns (ListTransactionsResponse)
+</code></pre>
+<pre id="Bitcoin-GetTransactionByHash"><code class="language-proto">rpc GetTransactionByHash(GetTransactionByHashRequest) returns (Transaction)
+</code></pre>
+</section>
+<h2 id="Types">Types</h2>
+<h3 id="Block">Block</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="Block-header">
+<td><code>header</code></td>
+<td><code><a href="#BlockHeader">BlockHeader</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Block-transactions">
+<td><code>transactions</code></td>
+<td><code><a href="#Transaction">Transaction[]</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="BlockHeader">BlockHeader</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BlockHeader-version">
+<td><code>version</code></td>
+<td><code>int32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="BlockHeader-prev_block">
+<td><code>prevBlock</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="BlockHeader-merkle_root">
+<td><code>merkleRoot</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="BlockHeader-timestamp">
+<td><code>timestamp</code></td>
+<td><code><a href="https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#timestamp">Timestamp</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="BlockHeader-bits">
+<td><code>bits</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="BlockHeader-nonce">
+<td><code>nonce</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetBlockByHashRequest">GetBlockByHashRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetBlockByHashRequest-block_hash">
+<td><code>blockHash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetBlockByNumberRequest">GetBlockByNumberRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetBlockByNumberRequest-block_number">
+<td><code>blockNumber</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="GetTransactionByHashRequest">GetTransactionByHashRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GetTransactionByHashRequest-transaction_hash">
+<td><code>transactionHash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="ListTransactionsRequest">ListTransactionsRequest</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ListTransactionsRequest-account">
+<td><code>account</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="ListTransactionsRequest-page_size">
+<td><code>pageSize</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="ListTransactionsRequest-page_token">
+<td><code>pageToken</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="ListTransactionsResponse">ListTransactionsResponse</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ListTransactionsResponse-transactions">
+<td><code>transactions</code></td>
+<td><code><a href="#Transaction">Transaction[]</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="OutPoint">OutPoint</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="OutPoint-hash">
+<td><code>hash</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="OutPoint-index">
+<td><code>index</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="Transaction">Transaction</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="Transaction-version">
+<td><code>version</code></td>
+<td><code>int32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Transaction-tx_in">
+<td><code>txIn</code></td>
+<td><code><a href="#TxIn">TxIn[]</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Transaction-tx_out">
+<td><code>txOut</code></td>
+<td><code><a href="#TxOut">TxOut[]</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Transaction-lock_time">
+<td><code>lockTime</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="TxIn">TxIn</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="TxIn-previous_out_point">
+<td><code>previousOutPoint</code></td>
+<td><code><a href="#OutPoint">OutPoint</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="TxIn-signature_script">
+<td><code>signatureScript</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="TxIn-witness">
+<td><code>witness</code></td>
+<td><code>string[]</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="TxIn-sequence">
+<td><code>sequence</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h3 id="TxOut">TxOut</h3>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="TxOut-value">
+<td><code>value</code></td>
+<td><code>int64</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="TxOut-pk_script">
+<td><code>pkScript</code></td>
+<td><code>string</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>

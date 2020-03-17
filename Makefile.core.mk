@@ -89,6 +89,7 @@ protoc_gen_k8s_support_plugins := --jsonshim_out=$(gogo_mapping):$(out_path) --d
 
 gen: \
 	generate-ethereum \
+	generate-bitcoin \
 	tidy-go \
 	mirror-licenses \
 
@@ -113,6 +114,26 @@ generate-ethereum: $(ethereum_v1alpha1_pb_gos) $(ethereum_v1alpha1_pb_docs) $(et
 
 clean-ethereum:
 	@rm -fr $(ethereum_v1alpha1_pb_gos) $(ethereum_v1alpha1_pb_docs) $(ethereum_v1alpha1_pb_pythons)
+
+#####################
+# bitcoin/...
+#####################
+
+bitcoin_v1alpha1_path := bitcoin/v1alpha1
+bitcoin_v1alpha1_protos := $(wildcard $(bitcoin_v1alpha1_path)/*.proto)
+bitcoin_v1alpha1_pb_gos := $(bitcoin_v1alpha1_protos:.proto=.pb.go)
+bitcoin_v1alpha1_pb_pythons := $(patsubst $(bitcoin_v1alpha1_path)/%.proto,$(python_output_path)/$(bitcoin_v1alpha1_path)/%_pb2.py,$(bitcoin_v1alpha1_protos))
+bitcoin_v1alpha1_pb_docs := $(bitcoin_v1alpha1_protos:.proto=.pb.html)
+
+$(bitcoin_v1alpha1_pb_gos) $(bitcoin_v1alpha1_pb_docs) $(bitcoin_v1alpha1_pb_pythons): $(bitcoin_v1alpha1_protos)
+	@$(protolock) status
+	@$(protoc) $(gogofast_plugin)  $(protoc_gen_python_plugin) $(protoc_gen_docs_plugin)$(bitcoin_v1alpha1_path) $^
+	@cp -r /tmp/exowei.io/api/bitcoin/* bitcoin
+
+generate-bitcoin: $(bitcoin_v1alpha1_pb_gos) $(bitcoin_v1alpha1_pb_docs) $(bitcoin_v1alpha1_pb_pythons)
+
+clean-bitcoin:
+	@rm -fr $(bitcoin_v1alpha1_pb_gos) $(bitcoin_v1alpha1_pb_docs) $(bitcoin_v1alpha1_pb_pythons)
 
 #####################
 # Protolock
@@ -144,7 +165,8 @@ fmt: format-python
 #####################
 
 clean: \
-	clean-ethereum
+	clean-ethereum \
+	clean-bitcoin
 
 #####################
 # CI System

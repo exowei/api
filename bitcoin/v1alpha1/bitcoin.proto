@@ -1,0 +1,97 @@
+// Copyright 2020 Exowei Authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+// This package defines the Bitcoin API that can be used to
+// interact with the Bitcoin blockchain.
+package exowei.bitcoin.v1alpha1;
+
+option go_package = "exowei.io/api/bitcoin/v1alpha1";
+option cc_generic_services = true;
+
+import "gogoproto/gogo.proto";
+import "google/protobuf/timestamp.proto";
+
+option (gogoproto.goproto_getters_all) = false;
+option (gogoproto.equal_all) = false;
+option (gogoproto.gostring_all) = false;
+option cc_enable_arenas = true;
+
+service Bitcoin {
+    rpc GetBlockByHash(GetBlockByHashRequest) returns (Block) {}
+    rpc GetBlockByNumber(GetBlockByNumberRequest) returns (Block) {}
+    rpc ListTransactions(ListTransactionsRequest) returns (ListTransactionsResponse) {}
+    rpc GetTransactionByHash(GetTransactionByHashRequest) returns (Transaction) {}
+}
+
+message Block {
+    BlockHeader header = 1;
+    repeated Transaction transactions = 2;
+}
+
+message BlockHeader {
+    int32 version = 1;
+    string prev_block = 2;
+    string merkle_root = 3;
+    google.protobuf.Timestamp timestamp = 4;
+    uint32 bits = 5;
+    uint32 nonce = 6;
+}
+
+message OutPoint {
+    string hash = 1;
+    uint32 index = 2;
+}
+
+message TxIn {
+    OutPoint previous_out_point = 1;
+    string signature_script = 2;
+    repeated string witness = 3;
+    uint32 sequence = 4;
+}
+
+message TxOut {
+    int64 value = 1;
+    string pk_script = 2;
+}
+
+message Transaction {
+    int32 version = 1;
+    repeated TxIn tx_in = 2;
+    repeated TxOut tx_out = 3;
+    uint32 lock_time = 4;
+}
+
+message GetBlockByHashRequest {
+    string block_hash = 1;
+}
+
+message GetBlockByNumberRequest {
+    uint32 block_number = 1;
+}
+
+message ListTransactionsRequest {
+    string account = 1;
+    uint32 page_size = 2;
+    string page_token = 3;
+}
+
+message ListTransactionsResponse {
+    repeated Transaction transactions = 1;
+}
+
+message GetTransactionByHashRequest {
+    string transaction_hash = 1;
+}
